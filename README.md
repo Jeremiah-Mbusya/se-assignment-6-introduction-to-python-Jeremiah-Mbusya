@@ -390,20 +390,681 @@ float_var = 20.5
 5. Control Structures:
    - Explain the use of conditional statements and loops in Python. Provide examples of an `if-else` statement and a `for` loop.
 
-6. Functions in Python:
+
+   ### 4. Data Types and Variables
+
+#### Basic Data Types in Python
+
+1. **Integer (`int`):**
+   - Whole numbers, positive or negative, without a decimal point.
+   ```python
+   age = 25
+   ```
+
+2. **Float (`float`):**
+   - Numbers with a decimal point.
+   ```python
+   height = 5.9
+   ```
+
+3. **String (`str`):**
+   - A sequence of characters enclosed in quotation marks.
+   ```python
+   name = "Alice"
+   ```
+
+4. **Boolean (`bool`):**
+   - Represents `True` or `False`.
+   ```python
+   is_student = True
+   ```
+
+5. **List (`list`):**
+   - An ordered collection of items, which can be of different types.
+   ```python
+   numbers = [1, 2, 3, 4, 5]
+   ```
+
+6. **Tuple (`tuple`):**
+   - An ordered, immutable collection of items.
+   ```python
+   coordinates = (10.0, 20.0)
+   ```
+
+7. **Dictionary (`dict`):**
+   - A collection of key-value pairs.
+   ```python
+   student = {"name": "Alice", "age": 25}
+   ```
+
+8. **Set (`set`):**
+   - An unordered collection of unique items.
+   ```python
+   unique_numbers = {1, 2, 3, 4, 5}
+   ```
+
+### Script Demonstrating Variables of Different Data Types
+
+```python
+# Integer
+age = 25
+print("Age:", age)
+
+# Float
+height = 5.9
+print("Height:", height)
+
+# String
+name = "Alice"
+print("Name:", name)
+
+# Boolean
+is_student = True
+print("Is student:", is_student)
+
+# List
+numbers = [1, 2, 3, 4, 5]
+print("Numbers:", numbers)
+
+# Tuple
+coordinates = (10.0, 20.0)
+print("Coordinates:", coordinates)
+
+# Dictionary
+student = {"name": "Alice", "age": 25}
+print("Student:", student)
+
+# Set
+unique_numbers = {1, 2, 3, 4, 5}
+print("Unique numbers:", unique_numbers)
+```
+
+### 5. Control Structures
+
+#### Conditional Statements
+
+Conditional statements allow you to execute certain blocks of code based on conditions. The primary conditional statements in Python are `if`, `elif`, and `else`.
+
+**Example of an `if-else` Statement:**
+
+```python
+age = 18
+
+if age >= 18:
+    print("You are an adult.")
+else:
+    print("You are a minor.")
+```
+
+#### Loops
+
+Loops are used to repeat a block of code multiple times. Python supports `for` and `while` loops.
+
+**Example of a `for` Loop:**
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+for number in numbers:
+    print("Number:", number)
+```
+
+**Example of a `while` Loop:**
+
+```python
+count = 0
+
+while count < 5:
+    print("Count:", count)
+    count += 1
+```
+
+### Detailed Explanation of Control Structures
+
+- **`if` Statement:**
+  - The `if` statement evaluates a condition. If the condition is `True`, the block of code inside the `if` statement is executed.
+  - Example:
+    ```python
+    number = 10
+    if number > 5:
+        print("Number is greater than 5")
+    ```
+
+- **`elif` Statement:**
+  - Short for "else if," `elif` allows you to check multiple expressions for `True` and execute a block of code as soon as one of the conditions is `True`.
+  - Example:
+    ```python
+    number = 10
+    if number > 10:
+        print("Number is greater than 10")
+    elif number == 10:
+        print("Number is exactly 10")
+    else:
+        print("Number is less than 10")
+    ```
+
+- **`else` Statement:**
+  - The `else` statement catches anything which isn't caught by the preceding conditions.
+  - Example:
+    ```python
+    number = 4
+    if number > 10:
+        print("Number is greater than 10")
+    else:
+        print("Number is 10 or less")
+    ```
+
+- **`for` Loop:**
+  - The `for` loop iterates over a sequence (like a list, tuple, dictionary, set, or string) and executes a block of code for each item in the sequence.
+  - Example:
+    ```python
+    fruits = ["apple", "banana", "cherry"]
+    for fruit in fruits:
+        print(fruit)
+    ```
+
+- **`while` Loop:**
+  - The `while` loop repeats as long as a certain condition is `True`.
+  - Example:
+    ```python
+    count = 1
+    while count < 6:
+        print(count)
+        count += 1
+    ```
+
+These control structures are fundamental to controlling the flow of a Python program, allowing you to make decisions and repeat actions as necessary.
+
+
+
+
+
+Qn (6). Functions in Python:
    - What are functions in Python, and why are they useful? Write a Python function that takes two arguments and returns their sum. Include an example of how to call this function.
+
+
+
+### Functions in Python
+
+#### What are Functions?
+
+Functions in Python are reusable blocks of code that perform a specific task. They can take inputs (arguments), process them, and return an output (result). Functions help in organizing code, making it more readable, maintainable, and reusable.
+
+#### Why are Functions Useful?
+
+1. **Code Reusability:**
+   - Functions allow you to write code once and reuse it multiple times without duplicating the code.
+
+2. **Modularity:**
+   - Breaking a program into smaller, manageable functions makes it easier to understand, test, and debug.
+
+3. **Abstraction:**
+   - Functions provide a way to abstract complex operations, allowing you to use them without needing to understand their internal workings.
+
+4. **Improved Readability:**
+   - Well-named functions can make code self-documenting and more understandable.
+
+### Writing a Function to Calculate the Sum of Two Arguments
+
+Here is an example of a simple Python function that takes two arguments and returns their sum:
+
+```python
+def add_numbers(a, b):
+    """
+    This function takes two arguments and returns their sum.
+    
+    Parameters:
+    a (int or float): The first number.
+    b (int or float): The second number.
+    
+    Returns:
+    int or float: The sum of the two numbers.
+    """
+    return a + b
+```
+
+#### Example of How to Call This Function
+
+To call the function `add_numbers`, you need to pass two arguments to it. The function will return their sum, which you can print or store in a variable.
+
+```python
+# Example of calling the function
+
+# Call the function with integers
+result = add_numbers(5, 3)
+print("The sum is:", result)  # Output: The sum is: 8
+
+# Call the function with floats
+result = add_numbers(2.5, 4.7)
+print("The sum is:", result)  # Output: The sum is: 7.2
+```
+
+### Detailed Explanation
+
+- **Function Definition:**
+  ```python
+  def add_numbers(a, b):
+  ```
+  - `def` is the keyword used to define a function.
+  - `add_numbers` is the name of the function.
+  - `a` and `b` are parameters that the function accepts.
+
+- **Docstring:**
+  ```python
+  """
+  This function takes two arguments and returns their sum.
+  
+  Parameters:
+  a (int or float): The first number.
+  b (int or float): The second number.
+  
+  Returns:
+  int or float: The sum of the two numbers.
+  """
+  ```
+  - A docstring is a string literal that appears right after the function definition. It is used to document the function’s purpose, parameters, and return value.
+
+- **Function Body:**
+  ```python
+  return a + b
+  ```
+  - The body of the function performs the addition of `a` and `b` and returns the result.
+
+- **Calling the Function:**
+  ```python
+  result = add_numbers(5, 3)
+  ```
+  - The function `add_numbers` is called with arguments `5` and `3`.
+  - The returned value (`8`) is stored in the variable `result`.
+  - The `print` statement displays the result.
+
+By using functions, you can break down complex problems into simpler, more manageable tasks, making your code cleaner and more efficient.
+
+
+
 
 7. Lists and Dictionaries:
    - Describe the differences between lists and dictionaries in Python. Write a script that creates a list of numbers and a dictionary with some key-value pairs, then demonstrates basic operations on both.
 
-8. Exception Handling:
+
+
+### Differences Between Lists and Dictionaries in Python
+
+#### Lists
+
+- **Ordered:**
+  - Lists maintain the order of elements as they are inserted. The elements can be accessed by their index.
+- **Mutable:**
+  - Lists are mutable, meaning their elements can be changed, added, or removed.
+- **Homogeneous or Heterogeneous:**
+  - Lists can contain elements of different data types, including integers, strings, and even other lists.
+
+Example of a List:
+```python
+numbers = [1, 2, 3, 4, 5]
+```
+
+#### Dictionaries
+
+- **Unordered:**
+  - Dictionaries do not maintain any order for the elements. Starting from Python 3.7, dictionaries are insertion-ordered, but traditionally they are considered unordered.
+- **Mutable:**
+  - Dictionaries are mutable, meaning their elements (key-value pairs) can be changed, added, or removed.
+- **Key-Value Pairs:**
+  - Dictionaries contain key-value pairs where each key must be unique and immutable (e.g., strings, numbers, or tuples), but values can be of any data type and can be duplicated.
+
+Example of a Dictionary:
+```python
+student = {"name": "Alice", "age": 25, "grade": "A"}
+```
+
+### Script Demonstrating Lists and Dictionaries
+
+```python
+# Creating a list of numbers
+numbers = [1, 2, 3, 4, 5]
+print("Original list:", numbers)
+
+# Basic operations on the list
+# Adding an element to the list
+numbers.append(6)
+print("After appending 6:", numbers)
+
+# Removing an element from the list
+numbers.remove(3)
+print("After removing 3:", numbers)
+
+# Accessing an element by index
+print("Element at index 2:", numbers[2])
+
+# Slicing the list
+print("Slicing from index 1 to 3:", numbers[1:4])
+
+# Creating a dictionary with key-value pairs
+student = {
+    "name": "Alice",
+    "age": 25,
+    "grade": "A"
+}
+print("Original dictionary:", student)
+
+# Basic operations on the dictionary
+# Adding a new key-value pair
+student["major"] = "Computer Science"
+print("After adding major:", student)
+
+# Removing a key-value pair
+del student["age"]
+print("After deleting age:", student)
+
+# Accessing a value by key
+print("Student's name:", student["name"])
+
+# Checking if a key exists in the dictionary
+print("Is 'grade' a key in the dictionary?", "grade" in student)
+
+# Iterating over the dictionary
+print("Iterating over dictionary:")
+for key, value in student.items():
+    print(key, ":", value)
+```
+
+### Explanation of Script
+
+#### List Operations
+
+1. **Creating a List:**
+   ```python
+   numbers = [1, 2, 3, 4, 5]
+   ```
+   - Creates a list of numbers.
+
+2. **Appending an Element:**
+   ```python
+   numbers.append(6)
+   ```
+   - Adds the element `6` to the end of the list.
+
+3. **Removing an Element:**
+   ```python
+   numbers.remove(3)
+   ```
+   - Removes the first occurrence of the element `3` from the list.
+
+4. **Accessing an Element by Index:**
+   ```python
+   numbers[2]
+   ```
+   - Accesses the element at index `2` (the third element).
+
+5. **Slicing the List:**
+   ```python
+   numbers[1:4]
+   ```
+   - Slices the list to get elements from index `1` to `3` (inclusive of the start index, exclusive of the end index).
+
+#### Dictionary Operations
+
+1. **Creating a Dictionary:**
+   ```python
+   student = {
+       "name": "Alice",
+       "age": 25,
+       "grade": "A"
+   }
+   ```
+   - Creates a dictionary with key-value pairs.
+
+2. **Adding a Key-Value Pair:**
+   ```python
+   student["major"] = "Computer Science"
+   ```
+   - Adds a new key-value pair `"major": "Computer Science"` to the dictionary.
+
+3. **Removing a Key-Value Pair:**
+   ```python
+   del student["age"]
+   ```
+   - Removes the key-value pair with the key `"age"` from the dictionary.
+
+4. **Accessing a Value by Key:**
+   ```python
+   student["name"]
+   ```
+   - Accesses the value associated with the key `"name"`.
+
+5. **Checking for a Key:**
+   ```python
+   "grade" in student
+   ```
+   - Checks if the key `"grade"` exists in the dictionary.
+
+6. **Iterating Over the Dictionary:**
+   ```python
+   for key, value in student.items():
+       print(key, ":", value)
+   ```
+   - Iterates over the dictionary, printing each key and its corresponding value.
+
+This script demonstrates the creation and manipulation of lists and dictionaries in Python, showcasing the differences and basic operations you can perform with each data type.
+
+qn (8). Exception Handling:
    - What is exception handling in Python? Provide an example of how to use `try`, `except`, and `finally` blocks to handle errors in a Python script.
+
+   ### Exception Handling in Python
+
+**Exception handling** is a mechanism in Python that allows you to manage errors gracefully without crashing the program. It enables you to write code that can respond to runtime errors and continue execution or provide meaningful error messages.
+
+### Key Components of Exception Handling
+
+- **`try` Block:** This block contains code that might raise an exception.
+- **`except` Block:** This block defines how to handle the exception if it occurs.
+- **`finally` Block:** This block is executed regardless of whether an exception occurred or not. It is typically used for cleanup actions.
+
+### Example of Exception Handling
+
+Here’s a simple Python script demonstrating how to use `try`, `except`, and `finally` blocks:
+
+```python
+def divide_numbers(num1, num2):
+    try:
+        result = num1 / num2
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+        return None
+    except TypeError:
+        print("Error: Please provide numbers only.")
+        return None
+    else:
+        print("Division successful!")
+        return result
+    finally:
+        print("Execution of divide_numbers() complete.")
+
+# Example calls
+print(divide_numbers(10, 2))  # Should print: 5.0
+print(divide_numbers(10, 0))  # Should print an error message
+print(divide_numbers(10, "a"))  # Should print an error message
+```
+
+### Explanation of the Example
+
+1. **Function Definition:**
+   ```python
+   def divide_numbers(num1, num2):
+   ```
+   - Defines a function that takes two arguments to perform division.
+
+2. **`try` Block:**
+   ```python
+   try:
+       result = num1 / num2
+   ```
+   - Attempts to divide `num1` by `num2`. If `num2` is zero, a `ZeroDivisionError` will be raised.
+
+3. **`except` Block:**
+   - **Handling ZeroDivisionError:**
+     ```python
+     except ZeroDivisionError:
+         print("Error: Cannot divide by zero.")
+     ```
+     - Catches the exception when trying to divide by zero and prints an error message.
+
+   - **Handling TypeError:**
+     ```python
+     except TypeError:
+         print("Error: Please provide numbers only.")
+     ```
+     - Catches exceptions when non-numeric types are passed to the function.
+
+4. **`else` Block:**
+   ```python
+   else:
+       print("Division successful!")
+       return result
+   ```
+   - Executes if no exceptions are raised in the `try` block, indicating successful division.
+
+5. **`finally` Block:**
+   ```python
+   finally:
+       print("Execution of divide_numbers() complete.")
+   ```
+   - This block runs regardless of whether an exception occurred or not, useful for cleanup actions or final messages.
+
+### Output of Example Calls
+
+1. **Successful Division:**
+   ```plaintext
+   Division successful!
+   Execution of divide_numbers() complete.
+   5.0
+   ```
+
+2. **Division by Zero:**
+   ```plaintext
+   Error: Cannot divide by zero.
+   Execution of divide_numbers() complete.
+   None
+   ```
+
+3. **Passing a Non-Numeric Value:**
+   ```plaintext
+   Error: Please provide numbers only.
+   Execution of divide_numbers() complete.
+   None
+   ```
+
+### Summary
+
+Exception handling in Python is crucial for building robust applications. By using `try`, `except`, and `finally` blocks, you can manage errors gracefully and maintain the flow of your program.
+
+
+
+
 
 9. Modules and Packages:
    - Explain the concepts of modules and packages in Python. How can you import and use a module in your script? Provide an example using the `math` module.
 
+
+### Modules and Packages in Python
+
+#### Modules
+
+- **Definition:** 
+  - A module is a file containing Python code, such as functions, classes, or variables, which can be reused in other scripts.
+- **Purpose:** 
+  - Modules help in organizing and managing large codebases by breaking the code into smaller, manageable, and reusable parts.
+
+#### Packages
+
+- **Definition:** 
+  - A package is a collection of related modules organized in directories that include a special `__init__.py` file, indicating that the directory should be treated as a package.
+- **Purpose:** 
+  - Packages allow for a hierarchical structuring of the module namespace using dot notation.
+
+### Importing and Using a Module
+
+To import and use a module in your script, you use the `import` statement. 
+
+### Example Using the `math` Module
+
+The `math` module provides mathematical functions, such as trigonometric functions, logarithms, and more.
+
+```python
+import math
+
+# Using the math module
+number = 16
+square_root = math.sqrt(number)
+print(f"The square root of {number} is {square_root}")
+
+angle = math.pi / 4  # 45 degrees in radians
+cosine = math.cos(angle)
+print(f"The cosine of 45 degrees is {cosine}")
+```
+
+### Explanation
+
+1. **Importing the `math` Module:**
+   ```python
+   import math
+   ```
+   - Imports the `math` module, making its functions available in the script.
+
+2. **Using `math.sqrt()`:**
+   ```python
+   square_root = math.sqrt(number)
+   ```
+   - Calculates the square root of `number` using the `sqrt()` function from the `math` module.
+
+3. **Using `math.cos()`:**
+   ```python
+   cosine = math.cos(angle)
+   ```
+   - Calculates the cosine of `angle` (in radians) using the `cos()` function from the `math` module.
+
+### Summary
+
+- **Modules** are single files of Python code that provide reusable components.
+- **Packages** are collections of modules organized in directories with an `__init__.py` file.
+- Use the `import` statement to include modules in your scripts and access their functions.
+
+
+
+
 10. File I/O:
     - How do you read from and write to files in Python? Write a script that reads the content of a file and prints it to the console, and another script that writes a list of strings to a file.
+
+
+### Reading from a File
+
+```python
+# Reading from a file and printing its content
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+```
+
+### Writing to a File
+
+```python
+# Writing a list of strings to a file
+lines = ["First line", "Second line", "Third line"]
+
+with open('output.txt', 'w') as file:
+    for line in lines:
+        file.write(line + '\n')
+```
+
+
+
+
+
+
+
+
+
 
 # Submission Guidelines:
 - Your answers should be well-structured, concise, and to the point.
